@@ -88,6 +88,4 @@ public class Triangle extends Shape implements PerimeterService {
                 + ", side c = " + getC()
                 + ", height = " + getH() + " }");
     }
-
-
 }
