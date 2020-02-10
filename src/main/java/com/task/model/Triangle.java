@@ -76,7 +76,6 @@ public class Triangle extends Shape implements PerimeterService {
         return Double.parseDouble(df.format(a + b + c));
     }
 
-
     @Override
     public void draw() {
         System.out.println("Triangle: "
