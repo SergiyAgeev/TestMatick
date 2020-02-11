@@ -15,11 +15,8 @@ public class Main {
     public static void main(String[] args) {
         int[] randomArray = randomised();
         List<Shape> shapeList = new ArrayList<>();
-        for (int i = 0; i < randomArray.length; i++) {
-            while (randomArray[i] > 5) {
-                randomArray[i] -= 5;
-            }
-            switch (randomArray[i]) {
+        for (int value : randomArray) {
+            switch (value) {
                 case 1:
                     shapeList.add(new Circle());
                     break;
@@ -39,7 +36,7 @@ public class Main {
 
     private static int[] randomised() {
         int[] randomArray = new int[new Random().nextInt(50)];
-        Arrays.setAll(randomArray, i -> (Math.abs(new Random().nextInt(200))));
+        Arrays.setAll(randomArray, i -> (Math.abs(new Random().nextInt(4))));
         return randomArray;
     }
 }

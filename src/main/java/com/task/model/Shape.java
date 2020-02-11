@@ -9,6 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Shape {
     private String color;
+    private static final String FORMAT_PATTERN = "#.##";
 
     public abstract double calculateArea();
 
@@ -26,7 +27,7 @@ public abstract class Shape {
     }
 
     public double generateRandomDouble() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         return Double.parseDouble(df.format(ThreadLocalRandom.current().nextDouble(1.0, 100.0)));
     }
 }

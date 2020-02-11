@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 
 public class Circle extends Shape implements LengthOfCircleService {
     private double radius;
+    private static final String FORMAT_PATTERN = "#.##";
 
     public Circle() {
         radius = generateRandomDouble();
@@ -26,13 +27,13 @@ public class Circle extends Shape implements LengthOfCircleService {
 
     @Override
     public double calculateArea() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         return Double.parseDouble(df.format(Math.PI * (radius * radius)));
     }
 
     @Override
     public double calculateLengthOfTheCircle() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         return Double.parseDouble(df.format(2 * Math.PI * radius));
     }
 

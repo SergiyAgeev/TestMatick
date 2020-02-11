@@ -8,9 +8,10 @@ public class Triangle extends Shape implements PerimeterService {
     private double b;
     private double c;
     private double h;
+    private static final String FORMAT_PATTERN = "#.##";
 
     public Triangle() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         this.a = generateRandomDouble();
         this.b = generateRandomDouble();
         this.c = Double.parseDouble(df.format(Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))));
@@ -19,7 +20,7 @@ public class Triangle extends Shape implements PerimeterService {
     }
 
     public Triangle(double a, double b) {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         this.a = a;
         this.b = b;
         this.c = Double.parseDouble(df.format(Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))));
@@ -65,14 +66,14 @@ public class Triangle extends Shape implements PerimeterService {
 
     @Override
     public double calculateArea() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         double area = (b * a) / 2;
         return Double.parseDouble(df.format(area));
     }
 
     @Override
     public double calculatePerimeter() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         return Double.parseDouble(df.format(a + b + c));
     }
 

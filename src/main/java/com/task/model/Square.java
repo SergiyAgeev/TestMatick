@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 
 public class Square extends Shape implements PerimeterService {
     private double a;
+    private static final String FORMAT_PATTERN = "#.##";
 
     public Square() {
         this.a = generateRandomDouble();
@@ -26,13 +27,13 @@ public class Square extends Shape implements PerimeterService {
 
     @Override
     public double calculateArea() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         return Double.parseDouble(df.format(a * a));
     }
 
     @Override
     public double calculatePerimeter() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         return Double.parseDouble(df.format(4 * a));
     }
 

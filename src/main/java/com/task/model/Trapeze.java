@@ -6,6 +6,7 @@ public class Trapeze extends Shape {
     private double a;
     private double b;
     private double h;
+    private static final String FORMAT_PATTERN = "#.##";
 
     public Trapeze() {
         this.a = generateRandomDouble();
@@ -45,7 +46,7 @@ public class Trapeze extends Shape {
 
     @Override
     public double calculateArea() {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat(FORMAT_PATTERN);
         double area = ((a + b) * h) / 2;
         return Double.parseDouble(df.format(area));
     }
